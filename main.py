@@ -4,10 +4,6 @@ import math
 from time import sleep
 
 
-def hypotenuse(x, y):
-    return math.sqrt(x + y)
-
-
 def square(x):
     return x**2
 
@@ -27,4 +23,4 @@ if __name__ == '__main__':
     args = parser.parse_args()
     with Pool() as p:
         list_squared = list(p.map(square, [args.value1, args.value2]))
-    print(hypotenuse(list_squared[0], list_squared[1]))
+    print(math.sqrt(list_squared[0] + list_squared[1]))
